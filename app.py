@@ -7,9 +7,11 @@ run_with_ngrok(app)  # Start ngrok when app is run
 @app.route('/')
 def index():
     name = "Mi Chiamo Manuel Rucci FINE DI OGGI"
-    return render_template('index.html', name=name)
-
-
+    return render_template('index.html',
+                            name = "Manuel",
+                            surname = "Rucci",
+                            eta = "26",
+                            sesso = "Maschio" )
 
 if __name__ == "__main__":
     app.run()
