@@ -17,14 +17,14 @@ def load_data():
 def index():
     df = load_data()
     select = ["deceduti","totale_casi","dimessi_guariti","variazione_totale_positivi"]
-    fig = plot_plotly(dfplot,x ="data", y=["deceduti","dimessi_guariti","totale_positivi"],title="Andamento Nazionale")    
+    fig = plot_plotly(df,x ="data", y=["deceduti","dimessi_guariti","totale_positivi"],title="Andamento Nazionale")    
     
     return render_template('index.html', 
                             name="Manuel",
                             surname="Rucci",
                             eta="26",
                             sesso="Maschio",
-							collaboratore = "Sono Ugo e collaboro all'app")
+							collaboratore = "Sono Ugo e collaboro all'app",
                             fig= convert_plotly_fig_to_json(fig))
 
 if __name__ == "__main__":
