@@ -9,11 +9,7 @@ def index():
     name = "Mi Chiamo Manuel Rucci FINE DI OGGI"
     return render_template('index.html', name=name)
 
-@app.route("/upload", methods=["POST"])
-def upload():
-    uploaded_files = request.files.getlist("file[]")
-    print(uploaded_files)
-    return ""
+
 
 if __name__ == "__main__":
     app.run()
